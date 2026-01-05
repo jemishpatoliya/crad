@@ -4,7 +4,7 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "start": "serve -s . -l $PORT"
+    "start": "npx serve -s . -l $PORT"
   },
   "repository": {
     "type": "git",
