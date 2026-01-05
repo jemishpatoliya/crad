@@ -5,15 +5,24 @@ const path = require("path");
 const PORT = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
-  let filePath = path.join(__dirname, req.url === "/" ? "index.html" : req.url);
-  let ext = path.extname(filePath);
+  let filePath = path.join(
+    __dirname,
+    req.url === "/" ? "index.html" : req.url
+  );
 
-  let contentType = "text/html";
-  if (ext === ".css") contentType = "text/css";
-  if (ext === ".js") contentType = "application/javascript";
-  if (ext === ".png") contentType = "image/png";
-  if (ext === ".jpg" || ext === ".jpeg") contentType = "image/jpeg";
-  if (ext === ".svg") contentType = "image/svg+xml";
+  const ext = path.extname(filePath);
+  const contentTypeMap = {
+    ".html": "text/html",
+    ".css": "text/css",
+    ".js": "application/javascript",
+    ".png": "image/png",
+    ".jpg": "image/jpeg",
+    ".jpeg": "image/jpeg",
+    ".svg": "image/svg+xml",
+    ".json": "application/json"
+  };
+
+  const contentType = contentTypeMap[ext] || "text/plain";
 
   fs.readFile(filePath, (err, content) => {
     if (err) {
@@ -26,6 +35,6 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+server.listen(PORT, "0.0.0.0", () => {
+  console.log("Server running on port:", PORT);
 });
