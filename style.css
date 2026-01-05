@@ -106,21 +106,11 @@ body {
   margin-bottom: 14px;
 }
 
-.brandMark {
-  width: 34px;
-  height: 34px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  font-weight: 900;
-  color: #111;
-  background: radial-gradient(circle at 30% 30%, #ffd45b, #ff9b3d 55%, #ff3d3d);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
-}
 
 .brandName {
   font-weight: 850;
   letter-spacing: 0.2px;
+  color: #1B294B;
 }
 
 .brandSub {
@@ -342,6 +332,12 @@ body {
   justify-content: center !important;
   padding: 18px !important;
 }
+.brandMark img {
+  width: 50px;   /* change size */
+  height: auto;
+  display: block;
+}
+
 
 .panel.stage.preview .canvasWrap {
   width: min(560px, 100%) !important;
