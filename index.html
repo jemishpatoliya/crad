@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Poster Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <main class="grid grid3">
+        <section class="panel sidebar" aria-label="Controls">
+          <div class="brand">
+            <div class="brandMark" aria-hidden="true">N</div>
+            <div class="brandText">
+              <div class="brandName">Nitiverse</div>
+              <div class="brandSub">Digital Solutions</div>
+            </div>
+          </div>
+
+          <h2 class="sectionTitle">Enter your details</h2>
+
+          <div class="field">
+            <label for="nameInput">Your name</label>
+            <input id="nameInput" type="text" placeholder="Type your name" maxlength="40" autocomplete="off" />
+          </div>
+
+          <div class="field">
+            <label for="photoInput">Upload photo</label>
+            <input id="photoInput" type="file" accept="image/*" />
+            <p class="hint">Tip: Use a clear headshot for best results.</p>
+          </div>
+
+          <div class="actions">
+            <button id="downloadBtn" type="button" disabled>Download PNG</button>
+            <button id="resetBtn" type="button" class="secondary">Reset</button>
+          </div>
+
+          <div class="privacy">
+            <strong>Privacy:</strong>
+            <span>No login, no analytics, no API calls. Nothing is stored or sent anywhere.</span>
+          </div>
+        </section>
+
+
+        <section class="panel stage preview" aria-label="Live poster preview">
+          <div class="canvasWrap">
+            <canvas id="posterCanvas" aria-label="Poster preview canvas"></canvas>
+          </div>
+
+          <p id="status" class="status below">Add a name and photo to begin</p>
+        </section>
+      </main>
+
+      <footer class="bottomBar" aria-label="Footer">
+        <span>Developed &amp; Designed by <strong>Nitiverse Digital Solution</strong></span>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
